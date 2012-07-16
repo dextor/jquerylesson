@@ -13,9 +13,10 @@ window.MyApplication = (function(app, $) {
 		
 		var self = this;
 		
-		//jQuery ref's
-		var container = $('#container');	//main container
-		var nav = container.find('ul.left-nav');	//left side nav
+		//cached jQuery ref's
+		var container = $('#container');							// main container
+		var nav = container.find('ul.left-nav');			// left side nav
+		var content = container.find('div.content');	// right side content div
 		
 		// settings
 		var showLog = true; // set to false in production (hide the consolelog calls)
@@ -37,16 +38,39 @@ window.MyApplication = (function(app, $) {
 		};
 		
 		
-		//left side nav
-		var bindNavClick = function() {
-			container.on('click', 'ul.left-nav a', function(e) {
-				e.preventDefault();
-				var self = $(this);
-				nav.find('a.active-page').removeClass('active-page');
-				self.addClass('active-page');
-			});
+		var setColor = function() {
+			// 1. write some code to change the color of the first link in the left-nav
 		};
 		
+		
+		
+		//left side nav
+		var bindNavClick = function() {
+			//var templateMarkup = "<li><img src=\"${image}\" /><h3>Name:</h3><p>${name}</p></li><li><h3>Meal:</h3><p>${meal}</p></li><li><h3>Calories:</h3><p>${calories}</p></li><li><h3>Deliciousness:</h3><p>${deliciousness}</p></li>";
+			
+			// 1. write some code to change the styles of the link that was clicked in the left-nav
+			
+			// 2. write a plugin that creates an ajax request when the links are clicked
+			
+			/*
+			container.on('click', 'ul.left-nav a', function(e) {
+				
+				// prevent the link from appending '#' to the URL
+				e.preventDefault();
+				
+				// cache the jQuery-wrapped element reference
+				var self = $(this);	
+				
+				// remove the active-page class from the old clicked link
+				nav.find('a.active-page').removeClass('active-page');
+				
+				// add the active-page CSS class to the clicked link
+				self.addClass('active-page');
+				
+				// app.main.consolelog(['bindNavClick: ', self]);
+			});
+			*/
+		};
 		
 		
 		
@@ -152,7 +176,8 @@ window.MyApplication = (function(app, $) {
 				consoleFallback();
 				indexOfFallback();
 				sayHello();
-				bindNavClick();
+				// setColor();
+				// bindNavClick();
 			},
 			/* public methods */
 			consolelog: consolelog,
