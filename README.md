@@ -1,4 +1,4 @@
-jquerylesson-complete
-=====================
+jquerylesson
+============
 
-completed jquery plugin lesson
+basic jquery plugin lesson
