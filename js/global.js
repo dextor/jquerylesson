@@ -33,8 +33,8 @@ window.MyApplication = (function(app, $) {
 // private methods /////////////////////////////////////////////////////////////////////////////////
 		var sayHello = function() {
 			app.main.consolelog("Hello World!");
-			app.main.consolelog(['this: ', this]);	// Window.MyApplication.main
-			app.main.consolelog(['app.main: ', app.main]);
+			app.main.consolelog(['this: ', this]);	// Window
+			app.main.consolelog(['app.main: ', app.main]);	//Object with all our public properties in it //Window.MyApplication.main
 		};
 		
 		
@@ -175,7 +175,7 @@ window.MyApplication = (function(app, $) {
 				// private methods
 				consoleFallback();
 				indexOfFallback();
-				sayHello();
+				// sayHello();
 				// setColor();
 				// bindNavClick();
 			},
